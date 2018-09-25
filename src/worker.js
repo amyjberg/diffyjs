@@ -6,6 +6,7 @@ let average2;
 let delta;
 let actualSensitivity;
 
+// event handler for when window object gets message event?
 const createDiffBuffer = ({ data: { buffer, data1, data2, width, height, sensitivity, threshold }}) => {
   let i = 0;
   actualSensitivity = 1 - sensitivity;
@@ -30,4 +31,4 @@ const createDiffBuffer = ({ data: { buffer, data1, data2, width, height, sensiti
   postMessage(buffer);
 };
 
-onmessage = createDiffBuffer;
+onmessage = createDiffBuffer; // check browser compatibility

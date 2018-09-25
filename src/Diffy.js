@@ -1,5 +1,5 @@
 export default class Diffy {
-  constructor({
+  constructor({ // default values in object passed in as argument to constructor!
     tickFn = () => {},
     captureFn = () => {},
     DiffWorker = () => {},

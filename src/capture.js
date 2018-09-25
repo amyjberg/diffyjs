@@ -7,7 +7,7 @@
 const getUserMedia = (constraints, successCallback, errorCallback) => {
 
   // First get a hold of getUserMedia, if present
-  const getUserMedia = (navigator.getUserMedia ||
+  const getUserMedia = (navigator.getUserMedia || // will be deprecated?
       navigator.webkitGetUserMedia ||
       navigator.mozGetUserMedia);
 
@@ -42,7 +42,7 @@ if(navigator.mediaDevices.getUserMedia === undefined) {
  */
 const capture = (constraints) => {
   return navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => window.URL.createObjectURL(stream))
+    .then((stream) => window.URL.createObjectURL(stream)) // will be deprecated?
     .catch(({ name, message }) => console.error(`${name} : ${message}`));
 }
 
